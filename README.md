@@ -14,20 +14,7 @@
 
 * *When *[building](https://github.com/datastax/docker-images#building)* custom images from the DataStax github repository, a *[DataStax Academy account](https://academy.datastax.com/).**
 
-**_The Basics_**
-
-*Here you will see examples on how to start a simple standalone container for the specific workloads by adding flags to the end of the `docker run` command.  No flag for transactional, -g for graph, -k for Analytics, -s for Search workloads.  In my case, I will be combining all the workloads, You can use any combination of those flags for the workload you need.*
-
-***Notice the -e flag which is for environmental variable it has `DS_LICENSE=accept` just after it.  This is required or the container will not start.***
-
-***Now for some fun.***
-
-# **_Lets create a DataStax Enterprise container_**
-
-### **_Create a DSE database container_**
-
-
-### **_Create a DSE container with Analytics (Spark) enabled_**
+### **_Pull DataStax Distribution of Apache Cassandra_**
 ```
 docker pull datastax/ddac:5.1.17
 ```
