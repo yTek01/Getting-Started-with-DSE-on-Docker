@@ -44,7 +44,7 @@ docker run -e DS_LICENSE=accept -p 7080:7080 -p 7081:7081 --name datastax_server
 ### **_Create a DSE OpsCenter container_**
 
 ```
-docker run -e DS_LICENSE=accept -p 8888:8888 --name my-opscenter -d datastax/dse-opscenter
+docker run -e DS_LICENSE=accept -p 8888:8888 --name my-opscenter -d datastax/dse-opscenter:6.8.15
 ```
 
 ### **_Create a DataStax studio container and link the container with the DSE server_**
@@ -198,7 +198,7 @@ system.graphs()
 *First create an OpsCenter container.*
 
 ```
-docker run -e DS_LICENSE=accept -d -p 8888:8888 --name my-opscenter
+docker run -e DS_LICENSE=accept -p 8888:8888 --name my-opscenter -d datastax/dse-opscenter:6.8.15
 ```
 
 *See [OpsCenter Docker run options](https://github.com/datastax/docker-images#OpsCenter-Docker-run-options) for additional options that persist data or manage configuration.*
@@ -206,7 +206,7 @@ docker run -e DS_LICENSE=accept -d -p 8888:8888 --name my-opscenter
 *To Create a [DataStax Enterprise (DSE) server](https://store.docker.com/images/datastax) container that is linked to the OpsCenter container.*
 
 ```
-docker run -e DS_LICENSE=accept --link my-opscenter:opscenter --name my-dse -d datastax/dse-server:6.8.15
+docker run -e DS_LICENSE=accept --link datastax/dse-opscenter:6.8.15 --name datastax_sever -d datastax/dse-server:6.8.15
 ```
 
 *Get the DSE container IP address:*
