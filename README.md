@@ -226,7 +226,7 @@ docker run -e DS_LICENSE=accept --link datastax/dse-opscenter:6.8.15 --name data
 **_ Now dive deeper and create a Studio container_**
 
 ```
-docker run -e DS_LICENSE=accept --link my-dse --name my-studio -p 9091:9091 -d datastax/dse-studio
+docker run -e DS_LICENSE=accept --link datastax_server --name my-studio -p 9091:9091 -d datastax/dse-studio
 ```
 
 1. *Open your browser and point to **http://DOCKER_HOST_IP:9091**, create the new connection using my-dse as the hostname.*
